@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse Documents</title>
+</head>
+<body>
+    <h1>Documents</h1>
+    <ul>
+        {% for doc in documents %}
+        <li><a href=/view/{{ doc._id }}>{{ doc.title }}</a></li> <!-- Replace 'your_field' with actual field names -->
+        {% endfor %}
+    </ul>
+</body>
+</html>

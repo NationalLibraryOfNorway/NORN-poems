@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browse Books</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+</head>
+<body>
+    <h1>Books</h1>
+      <!-- Sorting Buttons/Links -->
+      <div>
+        <a href="?sort=year">Sort by Year</a> |
+        <a href="?sort=author">Sort by Author</a> |
+        <a href="?sort=title">Sort by Title</a>
+    </div>
+    <div class="book-list">
+        {% for urn, book_info in books.items() %}
+        <div class="book">
+            <a href="javascript:void(0)" onclick="togglePoems('{{ urn }}')">
+                {{ book_info.title }} - {{ book_info.author }}, {{ book_info.year }}
+            </a>
+            <div id="poems-{{ urn }}" class="poem-list" style="display: none;">
+                {% for poem in book_info.poems %}
+                    <p><a href="/view/{{ poem._id }}">{{ poem.title }}</a></p>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

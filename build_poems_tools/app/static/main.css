@@ -1,0 +1,113 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Document List Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #0275d8;
+}
+
+/* Individual Document View Styling */
+div {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    div, ul {
+        width: 100%;
+        margin: 10px;
+    }
+}
+
+
+.metadata {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.metadata p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.metadata a {
+    color: #0275d8;
+}
+
+.metadata a:hover {
+    text-decoration: underline;
+}
+
+.document-link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.document-link li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.document-link:hover li {
+    background-color: #f4f4f4;
+}
+
+
+.book-list .book {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.book-list .book a {
+    text-decoration: none;
+    color: #0275d8;
+}
+
+.book-list .book a:hover {
+    text-decoration: underline;
+}
+
+.poem-list p {
+    margin-left: 20px;
+}

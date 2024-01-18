@@ -2,13 +2,23 @@
 <html>
 <head>
     <title>Browse Documents</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
     <h1>Documents</h1>
     <ul>
-        {% for doc in documents %}
-        <li><a href=/view/{{ doc._id }}>{{ doc.title }}</a></li> <!-- Replace 'your_field' with actual field names -->
-        {% endfor %}
+        <ul>
+            {% for doc in documents %}
+            <a href="/view/{{ doc._id }}" class="document-link" target="_blank">
+                <li>
+                    {{ doc.title }} - Author: {{ doc.author }},
+                    Book Title: {{ doc.book_title }},
+                    Year: {{ doc.year }},
+                    URN: {{ doc.urn }}
+                </li>
+            </a>
+            {% endfor %}
+        </ul>
     </ul>
 </body>
 </html>

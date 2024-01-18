@@ -11,7 +11,7 @@
             {% for doc in documents %}
             <a href="/view/{{ doc._id }}" class="document-link" target="_blank">
                 <li>
-                    {{ doc.title }} - Author: {{ doc.author }},
+                    {{ doc.title }} - dhlabid: {{doc.dhlabid }}, Author: {{ doc.author }},
                     Book Title: {{ doc.book_title }},
                     Year: {{ doc.year }},
                     URN: {{ doc.urn }}

@@ -57,6 +57,27 @@ def books():
     sorted_books = OrderedDict(sorted_books)
   
     return render_template('books.html', books=sorted_books)
+
+@app.route('/search')
+def search():
+    query = {}
+    dhlabid = request.args.get('dhlabid')
+    title = request.args.get('title')
+    author = request.args.get('author')
+    year = request.args.get('year')
+
+    if dhlabid:
+        query['dhlabid'] = dhlabid
+    if title:
+        query['title'] = {'$regex': title, '$options': 'i'}
+    if author:
+        query['author'] = {'$regex': author, '$options': 'i'}
+    if year:
+        query['year'] = int(year)
+
+    documents = db.poems.find(query)
+    return render_template('search.html', documents=documents)
+
     
 
     

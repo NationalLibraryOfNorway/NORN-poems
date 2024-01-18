@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Documents</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+
+    <h1>Search Documents</h1>
+
+<form action="/search" method="get">
+    <input type="text" name="dhlabid" placeholder="DH Lab ID">
+    <input type="text" name="title" placeholder="Title">
+    <input type="text" name="author" placeholder="Author">
+    <input type="number" name="year" placeholder="Year">
+    <input type="submit" value="Search">
+</form>
+
+{% if documents %}
+    <ul>
+    {% for doc in documents %}
+        <a href="/view/{{ doc['_id'] }}" class="document-link" target="_blank">
+            <li>
+                {{ doc.title }} - dhlabid: {{doc.dhlabid }}, Author: {{ doc.author }},
+                Book Title: {{ doc.book_title }},
+                Year: {{ doc.year }},
+                URN: {{ doc.urn }}
+            </li></a>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+</body>
+</html>
+

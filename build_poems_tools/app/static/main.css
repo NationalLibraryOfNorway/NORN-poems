@@ -10,35 +10,36 @@ body {
 
 /* Header Styling */
 h1 {
-    color: #333;
     text-align: center;
     margin-top: 20px;
 }
 
-/* Document List Styling */
+/* List Styling */
 ul {
     list-style-type: none;
     padding: 0;
 }
 
-li {
+li, .metadata {
     background-color: #fff;
     border: 1px solid #ddd;
     margin-bottom: 5px;
     padding: 10px;
 }
 
-a {
+/* Link Styling */
+a, .document-link {
     text-decoration: none;
     color: #333;
 }
 
-a:hover {
+a:hover, .metadata a:hover, .book-list .book a:hover {
+    text-decoration: underline;
     color: #0275d8;
 }
 
-/* Individual Document View Styling */
-div {
+/* Document View Styling */
+div, .metadata {
     width: 80%;
     margin: 20px auto;
     padding: 20px;
@@ -46,19 +47,9 @@ div {
     border: 1px solid #ddd;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    div, ul {
-        width: 100%;
-        margin: 10px;
-    }
-}
-
-
+/* Metadata Styling */
 .metadata {
     background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 15px;
     margin-bottom: 20px;
     border-radius: 5px;
 }
@@ -68,46 +59,24 @@ div {
     color: #555;
 }
 
-.metadata a {
-    color: #0275d8;
-}
-
-.metadata a:hover {
-    text-decoration: underline;
-}
-
-.document-link {
-    text-decoration: none;
-    color: #333;
-    display: block;
-}
-
-.document-link li {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    margin-bottom: 5px;
-    padding: 10px;
-}
-
+/* Hover Effects */
 .document-link:hover li {
     background-color: #f4f4f4;
 }
 
+/* Book and Poem List Styling */
+.book-list .book, .poem-list p {
+    margin-bottom: 10px;
+}
 
 .book-list .book {
-    margin-bottom: 10px;
     cursor: pointer;
 }
 
-.book-list .book a {
-    text-decoration: none;
-    color: #0275d8;
-}
-
-.book-list .book a:hover {
-    text-decoration: underline;
-}
-
-.poem-list p {
-    margin-left: 20px;
+/* Responsive Design */
+@media (max-width: 600px) {
+    div, ul {
+        width: 100%;
+        margin: 10px;
+    }
 }

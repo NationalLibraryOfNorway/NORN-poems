@@ -12,12 +12,10 @@ db = client.norn
 
 app = Flask(__name__)
 
-@app.route('/norn-poems/')
 @app.route('/')
 def index():
     return render_template('landing.html')
 
-@app.route('/norn-poems/browse/')
 @app.route('/browse')
 def browse():
     documents = db.poems.find()  # Modify as per your collection
@@ -26,14 +24,12 @@ def browse():
     return render_template('browse.html', documents=documents)
 
 @app.route('/view/<doc_id>')
-@app.route('/norn-poems/view/<doc_id>/')
 def view(doc_id):
     doc = db.poems.find_one({"_id": ObjectId(doc_id)})
     doc['text'] = doc['text'].replace('\n', '<br>')
     return render_template('view.html', doc=doc)
 
 @app.route('/books')
-@app.route('/norn-poems/books/')
 def books():
     documents = db.poems.find()
     # books_dct = OrderedDict()
@@ -66,7 +62,6 @@ def books():
     return render_template('books.html', books=sorted_books)
 
 @app.route('/search')
-@app.route('/norn-poems/search/')
 def search():
     query = {}
     dhlabid = request.args.get('dhlabid')

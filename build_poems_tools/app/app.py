@@ -2,16 +2,19 @@ from flask import Flask, render_template, request
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 from collections import OrderedDict
+import os
 
 # Replace the URI with your actual connection string
-client = MongoClient()
+mongodb_uri = os.getenv('MONGODB_REMOTE_URI')
+print(mongodb_uri)
+client = MongoClient(mongodb_uri)
 db = client.norn
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Hello, World!"
+    return render_template('landing.html')
 
 @app.route('/browse')
 def browse():

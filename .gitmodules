@@ -1,0 +1,3 @@
+[submodule "rhyming_patterns"]
+	path = rhyming_patterns
+	url = https://github.com:Sprakbanken/rhyming_patterns
